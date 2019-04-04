@@ -1,18 +1,12 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {withRouter} from 'react-router'
+import React from 'react'
 import Ticker from '../Ticker'
 
-export default class TickerArea extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <div className="tickerDiv">
-        <Ticker />
-      </div>
-    )
-  }
+const TickerArea = () => {
+  return (
+    <div className="tickerDiv">
+      <Ticker />
+    </div>
+  )
 }
+
+export default TickerArea
