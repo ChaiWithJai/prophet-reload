@@ -1,63 +1,17 @@
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
-import {
-  Button,
-  Segment,
-  Modal,
-  Transition,
-  TransitionablePortal
-} from 'semantic-ui-react'
+import {Button, Segment, Modal, Transition} from 'semantic-ui-react'
 import {getStockPrice} from '../../store/chart'
 import {getComparedStockPrice} from '../../store/compareChart'
 
-class Search extends Component {
+class SearchModal extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      submitEquity: '',
-      submitEquity2: '',
-      timeFrame: '3m',
       open: false
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleChange2 = this.handleChange2.bind(this)
-    this.handleSubmit2 = this.handleSubmit2.bind(this)
   }
-
-  handleChange(evt) {
-    evt.preventDefault()
-    this.setState({
-      submitEquity: evt.target.value
-    })
-  }
-  handleChange2(evt) {
-    evt.preventDefault()
-    this.setState({
-      submitEquity2: evt.target.value
-    })
-  }
-
-  handleSubmit = async () => {
-    await this.props.getStockPrice(this.state.submitEquity, 'ytd')
-    await this.setState({
-      submitEquity: ''
-    })
-  }
-
-  handleSubmit2 = async () => {
-    await this.props.getCompanyStockPrices(
-      this.state.submitEquity,
-      this.state.submitEquity2,
-      this.state.timeFrame
-    )
-    await this.setState({
-      submitEquity: '',
-      submitEquity2: ''
-    })
-  }
-
   show = size => () => this.setState({size, open: true})
 
   close = () => this.setState({open: false})
@@ -66,7 +20,7 @@ class Search extends Component {
     const {open, size} = this.state
 
     return (
-      <div className="search">
+      <div>
         <Button
           id="help-btn"
           onClick={this.show('tiny')}
@@ -103,69 +57,53 @@ class Search extends Component {
             )}
           </Transition.Group>
         </div>
-        {this.props.compare ? (
-          <div>
-            <label>
-              Pick an equity:
-              <input
-                type="text"
-                value={this.state.submitEquity}
-                onChange={this.handleChange}
-              />
-            </label>
-            <label>
-              Pick another equity:
-              <input
-                type="text"
-                value={this.state.submitEquity2}
-                onChange={this.handleChange2}
-              />
-            </label>
-            <Segment inverted id="search-button">
-              <Button
-                inverted
-                color="purple"
-                type="submit"
-                value="Submit"
-                onClick={this.handleSubmit2}
-              >
-                Submit
-              </Button>
-            </Segment>
-          </div>
-        ) : (
-          <div>
-            <label>
-              <h4>Pick a stock ticker: </h4>
-              <input
-                type="text"
-                value={this.state.submitEquity}
-                onChange={this.handleChange}
-              />
-            </label>
-            <Segment inverted id="search-button">
-              <Button
-                inverted
-                color="purple"
-                type="submit"
-                value="Submit"
-                onClick={this.handleSubmit}
-              >
-                Submit
-              </Button>
-            </Segment>
-          </div>
-        )}
       </div>
     )
   }
+}
+
+const Search = (props, initialTime = 'ytd') => {
+  const [equity, setEquity] = useState('')
+  //not being used
+  const [timeFrame, setTimeFrame] = useState(initialTime)
+
+  const handleChange = evt => {
+    evt.preventDefault()
+    setEquity(evt.target.value)
+  }
+  const handleSubmit = async () => {
+    await props.getStockPrice(equity, 'ytd')
+    await setEquity('')
+  }
+
+  return (
+    <div className="search">
+      <SearchModal />
+      <div>
+        <label>
+          Pick a company:
+          <input type="text" value={equity} onChange={handleChange} />
+        </label>
+        <Segment inverted id="search-button">
+          <Button
+            inverted
+            color="purple"
+            type="submit"
+            value="Submit"
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
+        </Segment>
+      </div>
+    </div>
+  )
 }
 
 const mapStateToProps = state => {
   return {
     historicalPrices: state.chart.historicalPrices,
     ticker: state.chart.ticker,
-    compare: state.companyDetailsTable.compare,
     ticker2: state.chart.ticker2
   }
 }
