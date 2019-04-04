@@ -1,31 +1,20 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {withRouter} from 'react-router'
 import PortfolioDataTable from '../PortfolioDataTable'
-import {
-  Button,
-  Modal,
-  Transition,
-  TransitionablePortal
-} from 'semantic-ui-react'
+import {Button, Modal, Transition} from 'semantic-ui-react'
 
-class PortfolioList extends Component {
+class PortfolioModal extends Component {
   constructor(props) {
     super(props)
     this.state = {
       open: false
     }
   }
-
   show = size => () => this.setState({size, open: true})
-
   close = () => this.setState({open: false})
-
   render() {
     const {open, size} = this.state
-
     return (
-      <div className="portfoliolist">
+      <div>
         <h4>
           {' '}
           List of portfolio value{' '}
@@ -71,10 +60,22 @@ class PortfolioList extends Component {
             )}
           </Transition.Group>
         </div>
-        <PortfolioDataTable />
       </div>
     )
   }
 }
+
+const PortfolioList = () => {
+  return (
+    <div className="portfoliolist">
+      <PortfolioModal />
+      <PortfolioDataTable />
+    </div>
+  )
+}
+/*
+
+
+*/
 
 export default PortfolioList
