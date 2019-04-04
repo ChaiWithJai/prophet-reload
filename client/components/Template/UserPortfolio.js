@@ -1,32 +1,24 @@
-import React, {Component} from 'react'
+import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
 import PortfolioList from './PortfolioList'
 import AssetAllocation from '../AssetAllocation'
 import {getPortfolio} from '../../store/assetallocation'
 
-class UserPortfolio extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      portfolio: []
-    }
-  }
-
-  componentDidMount() {
-    this.setState({
-      portfolio: this.props.portfolio
-    })
-  }
-
-  render() {
-    return (
-      <div className="portfolio-container">
-        <PortfolioList />
-        <AssetAllocation portfolioData={this.state.portfolio} />
-      </div>
-    )
-  }
+const UserPortfolio = (props, initialPortfolio = []) => {
+  const [portfolio, setPortfolio] = useState(initialPortfolio)
+  useEffect(
+    () => {
+      setPortfolio(props.portfolio)
+    },
+    [props.portfolio]
+  )
+  return (
+    <div className="portfolio-container">
+      <PortfolioList />
+      <AssetAllocation portfolioData={portfolio} />
+    </div>
+  )
 }
 
 const mapStateToProps = state => {
