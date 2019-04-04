@@ -1,38 +1,23 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React from 'react'
 import FeaturedChart from './FeaturedChart'
-import CompareChart from '../CompareChart'
 import CompanyFinancials from '../CompanyFinancials'
 import CompanyDetails from './CompanyDetails'
 import TickerArea from './TickerArea'
-import WithInstantSearch from '../WithInstantSearch'
 
-class Dashboard extends Component {
-  constructor(props) {
-    super(props)
-  }
+const Dashboard = () => {
+  return (
+    // <div className="dashboard-jsx-wrapper">
+    <div className="chart-container">
+      <FeaturedChart />
 
-  render() {
-    return (
-      // <div className="dashboard-jsx-wrapper">
-      <div className="chart-container">
-        {this.props.compare ? <CompareChart /> : <FeaturedChart />}
-
-        <div className="dashboard-financials-details-container">
-          <CompanyFinancials />
-          <CompanyDetails />
-        </div>
-
-        <TickerArea />
+      <div className="dashboard-financials-details-container">
+        <CompanyFinancials />
+        <CompanyDetails />
       </div>
-    )
-  }
+
+      <TickerArea />
+    </div>
+  )
 }
 
-const mapStateToProps = state => {
-  return {
-    compare: state.companyDetailsTable.compare
-  }
-}
-
-export default connect(mapStateToProps)(Dashboard)
+export default Dashboard
