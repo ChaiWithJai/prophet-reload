@@ -107,9 +107,12 @@ class ScoreCardModal extends Component {
 }
 
 const CompanyDetails = props => {
-  useEffect(() => {
-    props.getStats(props.ticker)
-  }, props.ticker)
+  useEffect(
+    () => {
+      props.getStats(props.ticker)
+    },
+    [props.ticker]
+  )
   const {company} = props
   return (
     <div className="companyDetails-container">
