@@ -1,4 +1,5 @@
 import axios from 'axios'
+import _ from 'lodash'
 
 const GET_FINANCIALS = 'GET_FINANCIALS'
 const GET_NEWS = 'GET_NEWS'
@@ -69,15 +70,21 @@ export const getStats = ticker => {
       )
       let currentRatio =
         health.financials[0].currentCash / health.financials[0].currentDebt
+      let yearAgoPercentChange = _.isEmpty(earnings)
+        ? 0
+        : earnings.earnings[0].yearAgoChangePercent
       let arrWithAggregateData = [
-        ['Growth', earnings.earnings[0].yearAgoChangePercent],
+        ['Growth', yearAgoPercentChange],
         ['Health', currentRatio],
         ['Valuation', stats.priceToSales],
         ['Profitability', stats.returnOnAssets]
       ]
       dispatch(gotCompanyStats(arrWithAggregateData))
     } catch (err) {
-      console.error('No information', err.message)
+      console.error(
+        `There's an issue with IEX API. Test to see if their routes are down.`,
+        err.message
+      )
     }
   }
 }
