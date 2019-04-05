@@ -80,6 +80,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+//why aren't we using withStore here
 const CompanyWithStore = connect(mapStateToProps, mapDispatchToProps)(
   BuySellPage
 )
