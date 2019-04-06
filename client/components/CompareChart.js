@@ -13,6 +13,7 @@ import {getComparedStockPrice} from '../store/compareChart'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
 
+//no longer in use can delete
 const axisProps = {
   tickSizeInner: 0,
   style: {line: {stroke: '#939393', strokeWidth: '1px'}}

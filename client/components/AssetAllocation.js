@@ -86,10 +86,11 @@ const AssetAllocation = (
     }, 50000)
     await setIntervalId(currentInterval)
   }
-  useEffect(async () => {
+  useEffect(() => {
     setPortfolio(props.portfolio)
     setCurrentUser(props.userId)
-    await intervalFunc()
+    //does intervalFunc need to be awaited here?
+    intervalFunc()
     return () => {
       clearInterval(intervalId)
     }
