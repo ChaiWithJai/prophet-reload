@@ -3,6 +3,7 @@ import {getFinancialData, getNews} from '../store/financialDataTable'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
 
+//delete me
 class CompanyData extends Component {
   constructor(props) {
     super(props)
@@ -31,7 +32,7 @@ class CompanyData extends Component {
         <table>
           <thead>
             <tr>
-              <th>{this.props.ticker} News</th>
+              <th>{this.props.ticker} King Chip</th>
             </tr>
             <tbody>
               {news.map((val, idx) => {

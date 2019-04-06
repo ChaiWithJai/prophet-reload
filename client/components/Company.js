@@ -4,34 +4,23 @@ import {getStockPriceToBuy, getStockPriceToSell} from '../store/assetallocation'
 import HomePageChart from './HomePageChart'
 import CompanyFinancials from './CompanyFinancials'
 
-class Company extends Component {
-  constructor(props) {
-    super(props)
-    this.handleSubmitBuy = this.handleSubmitBuy.bind(this)
-    this.handleSubmitSell = this.handleSubmitSell.bind(this)
+//this component is no longer needed delete
+const Company = props => {
+  const handleSubmitBuy = evt => {
+    evt.preventDefault()
+    props.buyStock()
   }
-
-  componentDidMount() {}
-
-  // arrow function should auto bind "this"
-  handleSubmitBuy(e) {
-    e.preventDefault()
-    this.props.buyStock()
+  const handleSubmitSell = evt => {
+    evt.preventDefault()
+    props.sellStock()
   }
-
-  handleSubmitSell = e => {
-    e.preventDefault()
-    this.props.sellStock()
-  }
-  render() {
-    return (
-      <div>
-        <h3>Apple</h3>
-        <HomePageChart />
-        <CompanyFinancials />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h3>Apple</h3>
+      <HomePageChart />
+      <CompanyFinancials />
+    </div>
+  )
 }
 
 const mapDispatchToProps = dispatch => {
