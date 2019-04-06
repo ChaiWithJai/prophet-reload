@@ -27,11 +27,7 @@ class SearchModal extends Component {
           icon="question circle outline icon"
         />
         <div>
-          <Transition.Group
-            open={open}
-            transition="horizontal-flip"
-            duration={1000}
-          >
+          <Transition.Group>
             {open && (
               <Modal size={size} open={open} onClose={this.close}>
                 <Modal.Header>What is an equity?</Modal.Header>

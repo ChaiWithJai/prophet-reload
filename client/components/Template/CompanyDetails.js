@@ -28,11 +28,7 @@ class ScoreCardModal extends Component {
             icon="question circle outline icon"
           />{' '}
         </h4>
-        <Transition.Group
-          open={open}
-          transition="horizontal-flip"
-          duration={1000}
-        >
+        <Transition.Group>
           {open && (
             <Modal size={size} open={open} onClose={this.close}>
               <Modal.Header>
