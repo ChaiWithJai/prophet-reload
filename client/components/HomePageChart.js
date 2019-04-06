@@ -1,14 +1,5 @@
-import React, {Component, useState, useEffect} from 'react'
-import {
-  XYPlot,
-  LineSeries,
-  XAxis,
-  YAxis,
-  ChartLabel,
-  HorizontalGridLines,
-  VerticalGridlines,
-  Crosshair
-} from 'react-vis'
+import React, {useState, useEffect} from 'react'
+import {XYPlot, LineSeries, XAxis, YAxis, ChartLabel} from 'react-vis'
 import {getStockPrice} from '../store/chart'
 import {connect} from 'react-redux'
 import {curveCatmullRom} from 'd3-shape'

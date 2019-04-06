@@ -85,7 +85,7 @@ class PortfolioDataTable extends Component {
 
           {this.props.portfolio.map((val, idx) => {
             return (
-              <Table.Body key={idx}>
+              <Table.Body key={val[0]}>
                 <Table.Row id={`portfolioData${idx}`}>
                   <Table.Cell>{val[0]}</Table.Cell>
                   <Table.Cell textAlign="center">
