@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {InstantSearch} from 'react-instantsearch-dom'
 
+//for later use when Algolia is implemented
 const WithInstantSearch = ({children}) => {
   return (
     <InstantSearch

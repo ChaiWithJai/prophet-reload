@@ -33,13 +33,9 @@ const AssetAllocationModal = (props, initialOpen = false, size = 'tiny') => {
         <Button onClick={show} id="help-btn" icon="question circle outline" />{' '}
       </h4>
       <div>
-        <Transition.Group
-          open={open}
-          transition="horizontal-flip"
-          duration={1000}
-        >
+        <Transition.Group>
           {open === true && (
-            <Modal size={size} open={open} onClose={close}>
+            <Modal open={true} size={size} onClose={close}>
               <Modal.Header>
                 This section contains a graphical division of your portfolio
               </Modal.Header>
@@ -56,7 +52,7 @@ const AssetAllocationModal = (props, initialOpen = false, size = 'tiny') => {
                   circular={true}
                   icon="checkmark"
                   labelPosition="left"
-                  content="Gang Gang"
+                  content="Got it!"
                 />
               </Modal.Actions>
             </Modal>

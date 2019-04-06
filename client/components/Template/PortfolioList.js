@@ -25,11 +25,7 @@ class PortfolioModal extends Component {
           />{' '}
         </h4>
         <div>
-          <Transition.Group
-            open={open}
-            transition="horizontal-flip"
-            duration={1000}
-          >
+          <Transition.Group>
             {open && (
               <Modal size={size} open={open} onClose={this.close}>
                 <Modal.Header>What is a portfolio?</Modal.Header>
