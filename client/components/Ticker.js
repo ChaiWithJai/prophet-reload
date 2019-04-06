@@ -10,9 +10,6 @@ import TickerItem from './TickerItem'
 const Ticker = ({data}) => {
   const passIn = data.slice(0, 120)
   return (
-    // <ReactTicker>
-    //   <p>Hi</p>
-    // </ReactTicker>
     <div className="ticker-wrapper">
       <div className={passIn.length === 0 ? 'ticker' : 'ticker scrolling'}>
         {passIn.map(symbol => (
