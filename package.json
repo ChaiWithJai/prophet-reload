@@ -39,6 +39,8 @@
   "dependencies": {
     "@material-ui/core": "^3.9.1",
     "@material-ui/icons": "^3.0.2",
+    "@types/react": "^16.8.12",
+    "@types/react-dom": "^16.8.3",
     "axios": "^0.15.3",
     "compression": "^1.7.3",
     "connect-session-sequelize": "^4.1.0",
@@ -88,6 +90,7 @@
     "@babel/preset-env": "^7.0.0-beta.55",
     "@babel/preset-react": "^7.0.0-beta.55",
     "@babel/register": "^7.0.0-beta.55",
+    "awesome-typescript-loader": "^5.2.1",
     "axios-mock-adapter": "^1.15.0",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.0-beta.4",
@@ -107,7 +110,9 @@
     "react-test-renderer": "^16.4.2",
     "redux-devtools-extension": "^2.13.5",
     "redux-mock-store": "^1.5.3",
+    "source-map-loader": "^0.2.4",
     "supertest": "^3.1.0",
+    "typescript": "^3.4.2",
     "webpack": "^4.16.4",
     "webpack-cli": "^3.1.0"
   }
