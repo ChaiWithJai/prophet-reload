@@ -94,6 +94,7 @@ const AssetAllocation = (
     return () => {
       clearInterval(intervalId)
     }
+    //run test cases to see if we can do [] or need to pass in [props.portfolio]
   }, [])
   let myData
   if (props.portfolio.length) {
