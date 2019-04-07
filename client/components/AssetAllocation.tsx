@@ -4,7 +4,7 @@ import {getStockPriceForAssetAllocation} from '../store/chart'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
 import {RadialChart} from 'react-vis'
-import {Button, Modal, Transition, SemanticCOLORS} from 'semantic-ui-react'
+import {Button, Modal, Transition} from 'semantic-ui-react'
 
 const myPalette = [
   '#cc00ff',
@@ -21,7 +21,8 @@ const myPalette = [
   'ae1865'
 ]
 
-const AssetAllocationModal = (props, initialOpen = false, size = 'tiny') => {
+//why do I run into errors on line 39 if I set type for size to string should I create enum var
+const AssetAllocationModal = (props, initialOpen = false, size: any = 'tiny') => {
   const [open, setOpen] = useState(initialOpen)
   const show = () => setOpen(true)
   //original incase not working const show = size => () => this.setState({size, open: true})
@@ -63,9 +64,10 @@ const AssetAllocationModal = (props, initialOpen = false, size = 'tiny') => {
   )
 }
 
+//remove parameters to AssetAllocatoin arg except props and pass in 0 and [] to useState
 const AssetAllocation = (
   props,
-  initialInterval = 0,
+  initialInterval: any = 0,
   initialUser = 0,
   initialPortfolio = []
 ) => {

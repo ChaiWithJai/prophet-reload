@@ -6,7 +6,6 @@
     "module": "es6", // specify module code generation
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "noImplicitAnyForClassMembers": false,
     "jsx": "react", // use typescript to transpile jsx to js
     "target": "es5", // specify ECMAScript target version
     "lib": ["es2018", "dom"],

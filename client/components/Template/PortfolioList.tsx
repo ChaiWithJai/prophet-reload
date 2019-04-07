@@ -1,18 +1,22 @@
 import React, {Component} from 'react'
 import PortfolioDataTable from '../PortfolioDataTable'
 import {Button, Modal, Transition} from 'semantic-ui-react'
+//type State = { open: boolean, size: string}
 
-class PortfolioModal extends Component {
+class PortfolioModal extends Component <{}, { open: boolean, size: any}> {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
+      size: ''
     }
   }
   show = size => () => this.setState({size, open: true})
   close = () => this.setState({open: false})
   render() {
-    const {open, size} = this.state
+    const open = this.state.open
+    const size = this.state.size
+    //const {open, size} = this.state
     return (
       <div>
         <h4>

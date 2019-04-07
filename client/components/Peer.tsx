@@ -133,8 +133,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getPeers: ticker => dispatch(getPeers(ticker)),
-    getStockPrice: (ticker, time, ticker2) =>
-      dispatch(getStockPrice(ticker, time, ticker2)),
+    getStockPrice: (ticker, time) =>
+      dispatch(getStockPrice(ticker, time)),
     getInFocus: () => dispatch(getInFocus())
   }
 }

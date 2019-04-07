@@ -5,7 +5,6 @@ import {connect} from 'react-redux'
 import {curveCatmullRom} from 'd3-shape'
 import {withRouter} from 'react-router'
 import {Button, Segment} from 'semantic-ui-react'
-import _ from 'lodash'
 
 const HomePageChart = props => {
   const [timeFrame, setTimeFrame] = useState('ytd')
@@ -17,7 +16,6 @@ const HomePageChart = props => {
   }
   useEffect(
     () => {
-      console.log('time', timeFrame)
       async function fetchData() {
         const response = await props.getStockPrice(currentEquity, timeFrame)
         return response

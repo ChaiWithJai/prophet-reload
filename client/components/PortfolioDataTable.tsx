@@ -16,7 +16,8 @@ const PortfolioDataTable = props => {
     const currentInterval = setInterval(() => {
       callBack(props.getPortfolio, props.userId)
     }, 50000)
-    await setIntervalId(currentInterval)
+    //type check currentInterval to be number
+    await setIntervalId(Number(currentInterval))
   }
   //we must re-render based values changing inside of the portfolio object so we're checking quanitity changes on items
   const determineReRender = props.portfolio.reduce((accum, val) => {

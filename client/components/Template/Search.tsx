@@ -5,11 +5,12 @@ import {Button, Segment, Modal, Transition} from 'semantic-ui-react'
 import {getStockPrice} from '../../store/chart'
 import {getComparedStockPrice} from '../../store/compareChart'
 
-class SearchModal extends Component {
+class SearchModal extends Component <{}, { open: boolean, size: any}> {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
+      size: "tiny"
     }
   }
   show = size => () => this.setState({size, open: true})
@@ -106,10 +107,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getStockPrice: (ticker, time, ticker2) =>
-      dispatch(getStockPrice(ticker, time, ticker2)),
-    getCompanyStockPrices: (ticker1, ticker2, time) =>
-      dispatch(getComparedStockPrice(ticker1, ticker2, time))
+    getStockPrice: (ticker, time) =>
+      dispatch(getStockPrice(ticker, time)),
+    getCompanyStockPrices: (ticker1, time) =>
+      dispatch(getComparedStockPrice(ticker1, time))
   }
 }
 

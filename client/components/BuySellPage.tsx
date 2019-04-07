@@ -34,7 +34,8 @@ const BuySellPage = (props, initialTicker = '', initialQuantity = 0) => {
           required
           name="quantity"
           value={quantity}
-          onChange={evt => setQuantity(evt.target.value)}
+          //create tests to check type on evt.target.value
+          onChange={(evt: React.ChangeEvent<HTMLInputElement>) => setQuantity(Number(evt.target.value))}
         />
       </div>
       <div className="small ui vertical buttons">
