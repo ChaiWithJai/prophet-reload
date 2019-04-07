@@ -95,13 +95,14 @@
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.0-beta.4",
     "chai": "^3.5.0",
-    "enzyme": "^3.0.0",
-    "enzyme-adapter-react-16": "^1.0.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^4.19.1",
     "eslint-config-fullstack": "^5.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-react": "^7.10.0",
     "husky": "^0.14.3",
+    "jest": "^24.7.1",
     "lint-staged": "^7.2.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.3",
@@ -115,5 +116,15 @@
     "typescript": "^3.4.2",
     "webpack": "^4.16.4",
     "webpack-cli": "^3.1.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
+    "testPathIgnorePatterns": [
+      "<rootDir>/assets/",
+      "<rootDir>/script/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/public/"
+    ],
+    "moduleFileExtensions": ["js", "json", "jsx", "ts", "tsx", "node"]
   }
 }

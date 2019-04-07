@@ -20,7 +20,7 @@ const formatHits = hits => {
     .value()
 }
 
-const SearchBar = props => {
+const SearchBar: React.StatelessComponent<any> = props => {
   const [val, setVal] = useState('')
 
   const onChange = (e, {value}) => {
