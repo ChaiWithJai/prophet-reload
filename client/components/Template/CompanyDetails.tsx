@@ -1,12 +1,10 @@
 import React, {Component, useEffect} from 'react'
 import {connect} from 'react-redux'
-// import {getPortfolioData} from '../store/companyDetailsTable'
 import {getStats} from '../../store/financialDataTable'
 import {withRouter} from 'react-router'
-import {Table, Button, Modal, Transition, TableCell} from 'semantic-ui-react'
-import axios from 'axios'
+import {Table, Button, Modal, Transition} from 'semantic-ui-react'
 
-class ScoreCardModal extends Component {
+class ScoreCardModal extends Component <any, any> {
   constructor(props) {
     super(props)
     this.state = {

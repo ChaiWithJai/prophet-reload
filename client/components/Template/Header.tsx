@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {StatelessComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Button, Segment} from 'semantic-ui-react'
@@ -6,10 +6,10 @@ import ModalTutorial from './ModalTutorial'
 import {Link} from 'react-router-dom'
 import {logout} from '../../store'
 
-const Header = ({handleClick}) => (
+const Header: React.StatelessComponent<any> = ({handleClick}) => (
   <div className="header-container">
     <div className="header-Logo">
-      <img src="/ProphetLogo300.svg" as="prophet-logo" height="50" width="50" />
+      <img src="/ProphetLogo300.svg" alt="prophet-logo" height="50" width="50" />
     </div>
     <ModalTutorial />
     <Segment inverted id="header-logout">
