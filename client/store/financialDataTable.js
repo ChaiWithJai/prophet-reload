@@ -73,11 +73,15 @@ export const getStats = ticker => {
       let yearAgoPercentChange = _.isEmpty(earnings)
         ? 0
         : earnings.earnings[0].yearAgoChangePercent
+      let healthInScoreCard = currentRatio !== null ? currentRatio : 0
+      let valInScoreCard = stats.priceToSales !== null ? stats.priceToSales : 0
+      let profitInScoreCard =
+        stats.returnOnAssets !== null ? stats.returnOnAssets : 0
       let arrWithAggregateData = [
         ['Growth', yearAgoPercentChange],
-        ['Health', currentRatio],
-        ['Valuation', stats.priceToSales],
-        ['Profitability', stats.returnOnAssets]
+        ['Health', healthInScoreCard],
+        ['Valuation', valInScoreCard],
+        ['Profitability', profitInScoreCard]
       ]
       dispatch(gotCompanyStats(arrWithAggregateData))
     } catch (err) {
