@@ -22,8 +22,8 @@ const myPalette = [
 ]
 
 //why do I run into errors on line 39 if I set type for size to string should I create enum var
-const AssetAllocationModal = (props, initialOpen = false, size: any = 'tiny') => {
-  const [open, setOpen] = useState(initialOpen)
+const AssetAllocationModal = (props, size: any = 'tiny') => {
+  const [open, setOpen] = useState(false)
   const show = () => setOpen(true)
   //original incase not working const show = size => () => this.setState({size, open: true})
   const close = () => setOpen(false)

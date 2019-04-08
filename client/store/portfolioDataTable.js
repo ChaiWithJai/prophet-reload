@@ -19,7 +19,7 @@ export const getPortfolioData = userId => {
       dispatch(gotPortfolioDataForTableFormat(annualFinancialReportFromIEX))
     } catch (err) {
       console.error(
-        'No data to report on this company. Call the SEC.',
+        'Error in middleware created by us check server/api/routes to start debugging',
         err.message
       )
     }

@@ -36,7 +36,7 @@ export const getFinancialData = ticker => {
       dispatch(gotFinancialData(annualFinancialReportFromIEX))
     } catch (err) {
       console.error(
-        'No data to report on this company. Call the SEC.',
+        'Error in middleware created by us check server/api/routes to start debugging',
         err.message
       )
     }

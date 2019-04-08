@@ -10,6 +10,10 @@ router.get('/stockprice/:ticker', async (req, res, next) => {
     )
     res.json(iexRealtimePrice.latestPrice)
   } catch (err) {
+    console.error(
+      'IEX API /quote error is likely test https://api.iextrading.com/1.0/stock/##ticker/quote',
+      err.message
+    )
     next(err)
   }
 })
@@ -27,6 +31,10 @@ router.get('/getChartData/:ticker/:time', async (req, res, next) => {
     }, [])
     res.json(chartData)
   } catch (err) {
+    console.error(
+      'IEX API /chart error is likely test https://api.iextrading.com/1.0/stock/##ticker/chart',
+      err.message
+    )
     next(err)
   }
 })
@@ -42,6 +50,10 @@ router.get('/getFinancialData/:ticker', async (req, res, next) => {
       iexFinancialReportData.financials[0]
     res.json(mostRecentYearFinancialReportFromJSONArr)
   } catch (err) {
+    console.error(
+      'IEX API /financials error is likely test https://api.iextrading.com/1.0/stock/##ticker/financials?period=annual',
+      err.message
+    )
     next(err)
   }
 })
@@ -53,6 +65,10 @@ router.get('/getPeers/:ticker', async (req, res, next) => {
     )
     res.json(iexRealtimePrice)
   } catch (err) {
+    console.error(
+      'IEX API /peers error is likely test https://api.iextrading.com/1.0/stock/##ticker/peers',
+      err.message
+    )
     next(err)
   }
 })
@@ -64,6 +80,10 @@ router.get('/getStats/:ticker', async (req, res, next) => {
     )
     res.json(iexRealTimeStats)
   } catch (err) {
+    console.error(
+      'IEX API /stats error is likely test https://api.iextrading.com/1.0/stock/##ticker/stats',
+      err.message
+    )
     next(err)
   }
 })

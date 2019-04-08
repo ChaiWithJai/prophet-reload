@@ -5,8 +5,8 @@ import PortfolioList from './PortfolioList'
 import AssetAllocation from '../AssetAllocation'
 import {getPortfolio} from '../../store/assetallocation'
 
-const UserPortfolio = (props, initialPortfolio = []) => {
-  const [portfolio, setPortfolio] = useState(initialPortfolio)
+const UserPortfolio = (props) => {
+  const [portfolio, setPortfolio] = useState([])
   useEffect(
     () => {
       setPortfolio(props.portfolio)

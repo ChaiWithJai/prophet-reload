@@ -49,7 +49,7 @@ export const getStockPrice = (ticker, time) => async dispatch => {
 
     dispatch(gotStockPrice(gotHistoricalPrices, ticker))
   } catch (err) {
-    console.error('BIGGG Drama Show', err.message)
+    console.error('Incorrect ticker likely', err.message)
   }
 }
 
@@ -60,10 +60,11 @@ export const getStockPriceForAssetAllocation = ticker => async dispatch => {
     )
     dispatch(gotStockPriceForAssetAllocation(realTimePrice))
   } catch (err) {
-    console.error('BIGGG Drama Show', err.message)
+    console.error('Incorrect ticker likely', err.message)
   }
 }
 
+//no longer in use
 export const getFinancials = () => async dispatch => {
   try {
     const {data: financials} = await axios.get(
@@ -71,7 +72,7 @@ export const getFinancials = () => async dispatch => {
     )
     dispatch(gotFinancials(financials))
   } catch (err) {
-    console.error('LIONS ONLY', err.message)
+    console.error('/financial IEX API must be down', err.message)
   }
 }
 

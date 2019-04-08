@@ -39,9 +39,9 @@ const Search = ({props}) => {
 }
 
 
-const BuySellPage = (props, initialTicker = '', initialQuantity = 0) => {
-  const [ticker, setTicker] = useState(initialTicker)
-  const [quantity, setQuantity] = useState(initialQuantity)
+const BuySellPage = (props) => {
+  const [ticker, setTicker] = useState('')
+  const [quantity, setQuantity] = useState(0)
   const handleSubmitBuy = evt => {
     evt.preventDefault()
     props.buyStock({ticker, quantity}, props.userId)
