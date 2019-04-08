@@ -2,9 +2,21 @@ import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import _ from 'lodash'
-import {connectAutoComplete} from 'react-instantsearch-dom'
+import {connectAutoComplete, algoliasearch, instantsearch} from 'react-instantsearch-dom'
 import {withRouter} from 'react-router-dom'
 import {Search, Image} from 'semantic-ui-react'
+
+/*
+const searchClient = algoliasearch(
+  'latency',
+  '6be0576ff61c053d5f9a3225e2a90f76'
+);
+
+const search = instantsearch({
+  indexName: 'instant_search',
+  searchClient,
+});
+*/
 
 const SearchWrap = styled.div`
   display: flex;
@@ -37,6 +49,7 @@ const SearchBar: React.StatelessComponent<any> = props => {
 
   return (
     <SearchWrap>
+      <h1>Hi</h1>
       <Search
         style={{width: '90%'}}
         fluid

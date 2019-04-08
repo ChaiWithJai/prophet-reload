@@ -5,7 +5,6 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import user from './user'
 import chart from './chart'
 import assetallocation from './assetallocation'
-import compareChart from './compareChart'
 import financialDataTable from './financialDataTable'
 import portfolioDataTable from './portfolioDataTable'
 import companyDetailsTable from './companyDetailsTable'
@@ -15,7 +14,6 @@ const reducer = combineReducers({
   user,
   chart,
   assetallocation,
-  compareChart,
   financialDataTable,
   portfolioDataTable,
   companyDetailsTable,

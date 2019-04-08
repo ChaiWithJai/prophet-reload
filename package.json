@@ -59,6 +59,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-instantsearch": "^5.4.0",
     "react-instantsearch-dom": "^5.4.0",
     "react-particles-js": "^2.4.2",
     "react-redux": "^5.0.7",
@@ -125,6 +126,13 @@
       "<rootDir>/node_modules/",
       "<rootDir>/public/"
     ],
-    "moduleFileExtensions": ["js", "json", "jsx", "ts", "tsx", "node"]
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "ts",
+      "tsx",
+      "node"
+    ]
   }
 }

@@ -4,8 +4,6 @@ import {getPriceFromAPI} from './store/ticker'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
 import Particles from 'react-particles-js'
-import particleConfig from './particle'
-import WithInstantSearch from './components/WithInstantSearch'
 
 class App extends Component {
   componentDidMount() {

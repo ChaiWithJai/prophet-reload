@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, SearchBar} from './components'
+import {Login, Signup, SearchBar, WithInstantSearch} from './components'
 import {me} from './store'
 import ParentContainer from './components/Template/ParentContainer'
 
@@ -23,7 +23,7 @@ class Routes extends Component {
         <Route exact path="/" component={Signup} />
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
-        <Route path="testing" component={SearchBar} />
+        <Route path="/testing" component={WithInstantSearch} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
