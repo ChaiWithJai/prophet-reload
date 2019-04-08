@@ -5,7 +5,7 @@ import {getComparedStockPrice} from '../store/compareChart'
 import {getStockPriceToBuy, getStockPriceToSell} from '../store/assetallocation'
 import {Button, Segment} from 'semantic-ui-react'
 
-const Search = ({props}) => {
+const Search: React.FC = ({props} : any) => {
   const [equity, setEquity] = useState('')
   //not being used
   const [timeFrame, setTimeFrame] = useState('ytd')
