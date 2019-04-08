@@ -392,6 +392,8 @@ table {
 
 #search-button {
   background-color: #564668;
+  font-size: 15px;
+  height: 15px;
 }
 
 /* Buy / Sell buttons */

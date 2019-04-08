@@ -116,46 +116,6 @@ Hit.propTypes = {
   hit: PropTypes.object.isRequired
 }
 
-/*
-const Search = (props) => {
-  const [equity, setEquity] = useState('')
-  //not being used
-  const [timeFrame, setTimeFrame] = useState('ytd')
-
-  const handleChange = evt => {
-    evt.preventDefault()
-    setEquity(evt.target.value)
-  }
-  const handleSubmit = async () => {
-    await props.getStockPrice(equity, 'ytd')
-    await setEquity('')
-  }
-
-  return (
-    <div className="search">
-      <SearchModal />
-      <div>
-        <label>
-          Pick a company:
-          <input type="text" value={equity} onChange={handleChange} />
-        </label>
-        <Segment inverted id="search-button">
-          <Button
-            inverted
-            color="purple"
-            type="submit"
-            value="Submit"
-            onClick={handleSubmit}
-          >
-            Submit
-          </Button>
-        </Segment>
-      </div>
-    </div>
-  )
-}
-*/
-
 const mapStateToProps = state => {
   return {
     historicalPrices: state.chart.historicalPrices,

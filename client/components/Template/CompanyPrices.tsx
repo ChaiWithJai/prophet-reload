@@ -6,7 +6,7 @@ import BuySellPage from '../BuySellPage'
 const CompanyPrices = props => {
   return (
     <div className="selector-child-container">
-      <h4> Buy and Sell Stocks Here </h4>
+      <h4> Use this search to change charts </h4>
       <BuySellPage ticker={props.ticker} />
     </div>
   )
